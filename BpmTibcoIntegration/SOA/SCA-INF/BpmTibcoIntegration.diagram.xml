@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dgm:gDiagram xmlns:dgm="http://xmlns.oracle.com/sca/soadgm">
+    <dgm:gService name="TibcoIntegrationProcess.service">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="276" width="137" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="269" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="TibcoIntegrationProcess.service" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpmn/bpmnProcess/TibcoIntegrationProcess#wsdl.interface(TibcoIntegrationProcessPortType)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/soap_service_20x20.png" X="20" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>start</dgm:item>
+        </dgm:operations>
+    </dgm:gService>
+    <dgm:gReference name="TibcoSOAPReference">
+        <dgm:body borderWidth="2" arcRad="20" X="690" Y="26" width="136" height="108">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="680" Y="19" width="156" height="122">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="TibcoSOAPReference" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.example.com/1502781869183#wsdl.interface(CustomerMoneyTransferInterface)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/soap_service_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>GetCustomerMoneyTransferList</dgm:item>
+            <dgm:item>SyncCustomerMoneyTransfer</dgm:item>
+            <dgm:item>CreateCustomerMoneyTransfer</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="SolfaRequestdbReference">
+        <dgm:body borderWidth="2" arcRad="20" X="690" Y="168" width="136" height="108">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="680" Y="161" width="156" height="122">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="SolfaRequestdbReference" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/SolfaRequestApplication/BpmTibcoIntegration/SolfaRequestdbReference#wsdl.interface(SolfaRequestdbReference_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/db_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>merge</dgm:item>
+            <dgm:item>insert</dgm:item>
+            <dgm:item>update</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="getRequestIDdbReference">
+        <dgm:body borderWidth="2" arcRad="20" X="690" Y="310" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="680" Y="303" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="getRequestIDdbReference" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/SolfaRequestApplication/BpmTibcoIntegration/getRequestIDdbReference#wsdl.interface(getRequestIDdbReference_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/db_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>getRequestIDdbReference</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="updateRequest-dbReference">
+        <dgm:body borderWidth="2" arcRad="20" X="690" Y="428" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="680" Y="421" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="updateRequest-dbReference" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/SolfaRequestApplication/BpmTibcoIntegration/updateRequest_dbReference#wsdl.interface(updateRequest_dbReference_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/db_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>updateRequest-dbReference</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="getCountRequests-dbReference">
+        <dgm:body borderWidth="2" arcRad="20" X="690" Y="546" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="680" Y="539" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="getCountRequests-dbReference" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/SolfaRequestApplication/BpmTibcoIntegration/getCountRequests_dbReference#wsdl.interface(getCountRequests_dbReference_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/db_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>getCountRequests-dbReference</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gComponent name="TibcoIntegrationProcess">
+        <dgm:body borderWidth="2" arcRad="20" X="359" Y="261" width="130" height="161">
+            <dgm:borderColor r="69" g="113" b="140"/>
+            <dgm:lightBgColor r="166" g="208" b="230"/>
+            <dgm:darkBgColor r="99" g="162" b="201"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="349" Y="254" width="150" height="177">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="TibcoIntegrationProcess.service" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpmn/bpmnProcess/TibcoIntegrationProcess#wsdl.interface(TibcoIntegrationProcessPortType)"/>
+        <dgm:outputPort name="Services.Externals.TibcoSOAPReference.reference" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.example.com/1502781869183#wsdl.interface(CustomerMoneyTransferInterface)"/>
+        <dgm:outputPort name="Services.Externals.SolfaRequestdbReference.reference" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/SolfaRequestApplication/BpmTibcoIntegration/SolfaRequestdbReference#wsdl.interface(SolfaRequestdbReference_ptt)"/>
+        <dgm:outputPort name="Services.Externals.GetRequestIDdbReference.reference" X="120" Y="65" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/SolfaRequestApplication/BpmTibcoIntegration/getRequestIDdbReference#wsdl.interface(getRequestIDdbReference_ptt)"/>
+        <dgm:outputPort name="Services.Externals.UpdateRequestDbReference.reference" X="120" Y="90" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/SolfaRequestApplication/BpmTibcoIntegration/updateRequest_dbReference#wsdl.interface(updateRequest_dbReference_ptt)"/>
+        <dgm:outputPort name="Services.Externals.GetCountRequestsDbReference.reference" X="120" Y="115" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/db/SolfaRequestApplication/BpmTibcoIntegration/getCountRequests_dbReference#wsdl.interface(getCountRequests_dbReference_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/bpm/fusion/soa/msg/images/bpmncomponent20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gWireLink source="TibcoIntegrationProcess/Services.Externals.TibcoSOAPReference.reference" target="TibcoSOAPReference" width="2">
+        <dgm:gSegment X1="499" Y1="286" X2="523" Y2="286"/>
+        <dgm:gSegment X1="523" Y1="286" X2="523" Y2="36"/>
+        <dgm:gSegment X1="523" Y1="36" X2="680" Y2="36"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="TibcoIntegrationProcess/Services.Externals.SolfaRequestdbReference.reference" target="SolfaRequestdbReference" width="2">
+        <dgm:gSegment X1="499" Y1="311" X2="538" Y2="311"/>
+        <dgm:gSegment X1="538" Y1="311" X2="538" Y2="178"/>
+        <dgm:gSegment X1="538" Y1="178" X2="680" Y2="178"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="TibcoIntegrationProcess/Services.Externals.GetRequestIDdbReference.reference" target="getRequestIDdbReference" width="2">
+        <dgm:gSegment X1="499" Y1="336" X2="553" Y2="336"/>
+        <dgm:gSegment X1="553" Y1="336" X2="553" Y2="320"/>
+        <dgm:gSegment X1="553" Y1="320" X2="680" Y2="320"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="TibcoIntegrationProcess/Services.Externals.UpdateRequestDbReference.reference" target="updateRequest-dbReference" width="2">
+        <dgm:gSegment X1="499" Y1="361" X2="538" Y2="361"/>
+        <dgm:gSegment X1="538" Y1="361" X2="538" Y2="438"/>
+        <dgm:gSegment X1="538" Y1="438" X2="680" Y2="438"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="TibcoIntegrationProcess/Services.Externals.GetCountRequestsDbReference.reference" target="getCountRequests-dbReference" width="2">
+        <dgm:gSegment X1="499" Y1="386" X2="523" Y2="386"/>
+        <dgm:gSegment X1="523" Y1="386" X2="523" Y2="556"/>
+        <dgm:gSegment X1="523" Y1="556" X2="680" Y2="556"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="TibcoIntegrationProcess.service" target="TibcoIntegrationProcess/TibcoIntegrationProcess.service" width="2">
+        <dgm:gSegment X1="168" Y1="286" X2="349" Y2="286"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+</dgm:gDiagram>

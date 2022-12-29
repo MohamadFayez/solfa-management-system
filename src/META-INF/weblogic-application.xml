@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<weblogic-application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                      xsi:schemaLocation="http://xmlns.oracle.com/weblogic/weblogic-application http://xmlns.oracle.com/weblogic/weblogic-application/1.6/weblogic-application.xsd"
+                      xmlns="http://xmlns.oracle.com/weblogic/weblogic-application">
+  <listener>
+    <listener-class>oracle.adf.share.weblogic.listeners.ADFApplicationStateListener</listener-class>
+  </listener>
+  <listener>
+    <listener-class>oracle.mds.lcm.weblogic.WLLifecycleListener</listener-class>
+  </listener>
+  <library-ref>
+    <library-name>adf.oracle.domain</library-name>
+  </library-ref>
+      <!-- Start WorkFlow Lib -->
+   <library-ref>
+        <library-name>oracle.soa.workflow</library-name>
+    </library-ref>
+    <!--<library-ref>
+        <library-name>oracle.soa.workflow.wc</library-name>
+    </library-ref>-->
+     
+    <library-ref>
+        <library-name>oracle.bpm.client</library-name>
+    </library-ref> 
+    
+    <library-ref>
+        <library-name>oracle.bpm.runtime</library-name>
+    </library-ref>
+    <library-ref>
+        <library-name>oracle.rules</library-name>
+    </library-ref>
+    
+  <!--<library-ref>
+    <library-name>adf.oracle.domain.webapp</library-name>
+  </library-ref>
+                <library-ref>
+        <library-name>oracle.soa.rules_dict_dc.webapp</library-name>
+    </library-ref>--> 
+    <!--- END  WorkFlow Lib -->
+  <session-descriptor>
+    <timeout-secs>3600</timeout-secs>
+    <max-in-memory-sessions>3600</max-in-memory-sessions>
+    <cookie-name>VFSolfaCookie</cookie-name>
+    <persistent-store-type>REPLICATED_IF_CLUSTERED</persistent-store-type>
+    <encode-session-id-in-query-params>true</encode-session-id-in-query-params>
+    <sharing-enabled>true</sharing-enabled>
+    <invalidate-on-relogin>true</invalidate-on-relogin>
+  </session-descriptor>
+</weblogic-application>

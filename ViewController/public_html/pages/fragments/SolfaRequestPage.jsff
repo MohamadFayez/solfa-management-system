@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:facelets="http://xmlns.oracle.com/jdev/webapp/facelets"
+                xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:messages id="m1"/>
+    <af:panelGroupLayout layout="vertical" id="pgl2">
+        <af:panelGroupLayout layout="vertical" id="pgl3">
+            <af:panelHeader text="#{res.SOLFA_REQUEST_REPORT_}" id="ph1">
+                <af:query id="qryId1" headerText="Search" disclosed="true"
+                          value="#{bindings.SolfaRequestROVCriteriaQuery.queryDescriptor}"
+                          model="#{bindings.SolfaRequestROVCriteriaQuery.queryModel}"
+                          queryListener="#{bindings.SolfaRequestROVCriteriaQuery.processQuery}"
+                          resultComponentId="::pc1:resId1" saveQueryMode="hidden" displayMode="compact"
+                          modeButtonPosition="footer" rows="1" maxColumns="3"
+                          queryOperationListener="#{bindings.SolfaRequestROVCriteriaQuery.processQueryOperation}"/>
+                <f:facet name="toolbar">
+                        <af:spacer width="10" height="10" id="s3"/>
+                    <af:link text="#{res.BACK}"        inlineStyle="font-family: 'Courier New';color: White;font-weight: bold;"    id="b2" action="home"/>
+                    <af:spacer width="30" height="30" id="s4"/>
+                </f:facet>
+            </af:panelHeader>
+        </af:panelGroupLayout>
+        <af:spacer width="10" height="10" id="s1"/>
+        <af:panelCollection id="pc1" styleClass="AFStretchWidth"
+                            featuresOff="statusBar formatMenu freeze wrap reorderColumnsMenuItem">
+            <f:facet name="toolbar">
+                <af:toolbar id="t1">
+                    <af:link id="b1" text="Export" icon="#{resource['images:excel.png']}">
+                        <af:exportCollectionActionListener exportedId="resId1" filename="SolfaRequestReport.xls"
+                                                           title="Solfa Requests" type="excelHTML"/>
+                    </af:link>
+                </af:toolbar>
+            </f:facet>
+            <af:table scrollPolicy="page" value="#{bindings.SolfaRequestReadView.collectionModel}" var="row"
+                      rows="#{bindings.SolfaRequestReadView.rangeSize}"
+                      emptyText="#{bindings.SolfaRequestReadView.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      rowBandingInterval="0"
+                      selectedRowKeys="#{bindings.SolfaRequestReadView.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.SolfaRequestReadView.collectionModel.makeCurrent}"
+                      rowSelection="single" fetchSize="10" id="resId1"
+                      styleClass="AFStretchWidth" width="100%" columnStretching="last">
+                <af:column headerText="#{bindings.SolfaRequestReadView.hints.RequestNumber.label}" id="resId1c1"
+                           width="150" align="center"
+                           sortProperty="#{bindings.SolfaRequestReadView.hints.RequestNumber.name}" sortable="true">
+                    <af:outputText value="#{row.RequestNumber}"
+                                   shortDesc="#{bindings.SolfaRequestReadView.hints.RequestNumber.tooltip}" id="ot1">
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.SolfaRequestReadView.hints.RequestNumber.format}"/>
+                    </af:outputText>
+                </af:column>
+                <af:column headerText="#{bindings.SolfaRequestReadView.hints.RequestDate.label}" id="resId1c2"
+                           width="150" align="center"
+                           sortProperty="#{bindings.SolfaRequestReadView.hints.RequestDate.name}" sortable="true">
+                    <af:outputText value="#{row.RequestDate}"
+                                   shortDesc="#{bindings.SolfaRequestReadView.hints.RequestDate.tooltip}" id="ot2">
+                        <af:convertDateTime pattern="dd/MM/yyyy"/>
+                    </af:outputText>
+                </af:column>
+                <af:column headerText="#{bindings.SolfaRequestReadView.hints.StaffId.label}" id="resId1c3" width="150"
+                           align="center" sortProperty="#{bindings.SolfaRequestReadView.hints.StaffId.name}"
+                           sortable="true">
+                    <af:outputText value="#{row.StaffId}"
+                                   shortDesc="#{bindings.SolfaRequestReadView.hints.StaffId.tooltip}" id="ot3"/>
+                </af:column>
+                <af:column headerText="#{bindings.SolfaRequestReadView.hints.Msisdn.label}" id="resId1c4" width="150"
+                           align="center" sortProperty="#{bindings.SolfaRequestReadView.hints.Msisdn.name}"
+                           sortable="true">
+                    <af:outputText value="#{row.Msisdn}"
+                                   shortDesc="#{bindings.SolfaRequestReadView.hints.Msisdn.tooltip}" id="ot4"/>
+                </af:column>
+                <af:column rendered="false" headerText="#{bindings.SolfaRequestReadView.hints.Pin.label}" id="resId1c5"
+                           align="center" sortProperty="#{bindings.SolfaRequestReadView.hints.Pin.name}"
+                           sortable="true">
+                    <af:outputText value="#{row.Pin}" shortDesc="#{bindings.SolfaRequestReadView.hints.Pin.tooltip}"
+                                   id="ot5"/>
+                </af:column>
+                <af:column headerText="#{bindings.SolfaRequestReadView.hints.AmountAllowed.label}" id="resId1c6"
+                           width="150" align="center"
+                           sortProperty="#{bindings.SolfaRequestReadView.hints.AmountAllowed.name}" sortable="true">
+                    <af:outputText value="#{row.AmountAllowed}"
+                                   shortDesc="#{bindings.SolfaRequestReadView.hints.AmountAllowed.tooltip}" id="ot6"/>
+                </af:column>
+                <af:column headerText="#{bindings.SolfaRequestReadView.hints.AmountRequested.label}" id="resId1c7"
+                           width="150" align="center"
+                           sortProperty="#{bindings.SolfaRequestReadView.hints.AmountRequested.name}" sortable="true">
+                    <af:outputText value="#{row.AmountRequested}"
+                                   shortDesc="#{bindings.SolfaRequestReadView.hints.AmountRequested.tooltip}" id="ot7"/>
+                </af:column>
+                <af:column headerText="#{bindings.SolfaRequestReadView.hints.RequestStatus.label}" id="resId1c8"
+                           align="center" sortProperty="#{bindings.SolfaRequestReadView.hints.RequestStatus.name}"
+                           sortable="true">
+                    <af:selectOneChoice value="#{row.bindings.RequestStatus.inputValue}"
+                                        label="#{row.bindings.RequestStatus.label}"
+                                        required="#{bindings.SolfaRequestReadView.hints.RequestStatus.mandatory}"
+                                        shortDesc="#{bindings.SolfaRequestReadView.hints.RequestStatus.tooltip}"
+                                        id="soc1">
+                        <f:selectItems value="#{row.bindings.RequestStatus.items}" id="si1"/>
+                        <f:validator binding="#{row.bindings.RequestStatus.validator}"/>
+                    </af:selectOneChoice>
+                </af:column>
+                <af:column headerText="Employee Band" id="c1"
+                           sortProperty="#{bindings.SolfaRequestReadView.hints.EmployeeBand.name}" sortable="true">
+                    <af:outputText value="#{row.EmployeeBand}"
+                                   shortDesc="#{bindings.SolfaRequestReadView.hints.EmployeeBand.tooltip}" id="ot8"/>
+                </af:column>
+            </af:table>
+        </af:panelCollection>
+    </af:panelGroupLayout>
+</ui:composition>
+
+
+
+
+
+
+

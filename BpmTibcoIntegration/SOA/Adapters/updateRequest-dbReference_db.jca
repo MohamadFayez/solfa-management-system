@@ -1,0 +1,11 @@
+<adapter-config name="updateRequest-dbReference" adapter="db" wsdlLocation="../WSDLs/updateRequest_dbReference.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="solfaConn" location="eis/DB/solfa"/>
+  <endpoint-interaction portType="updateRequest_dbReference_ptt" operation="updateRequest-dbReference">
+    <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
+      <property name="SqlString" value="update  solfa_requests set  request_status  =#status where request_Number= #requestId"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

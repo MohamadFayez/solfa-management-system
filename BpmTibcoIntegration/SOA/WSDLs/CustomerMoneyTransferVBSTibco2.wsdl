@@ -1,0 +1,143 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!--Created by TIBCO WSDL-->
+<wsdl:definitions
+     name="Untitled"
+     targetNamespace="http://xmlns.example.com/1502781869183"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:ns="http://group.vodafone.com/schema/vbm/payment/customer-money-transfer/v2"
+     xmlns:tns="http://xmlns.example.com/1502781869183"
+     xmlns:ns2="http://group.vodafone.com/contract/vho/header/v1"
+     xmlns:ns1="http://group.vodafone.com/contract/vfo/fault/v1"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    >
+    <wsdl:documentation>Customer Money Transfer is an Entity service that provides capabilities to store records of money payments related to customers. It always stores information about single payment only. It represents the transfer of wealth from customer for products or services. It records money transfers for both inbound (charges) and outbound (refunds). Version V2.0</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://group.vodafone.com/contract/vfo/fault/v1"
+             elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:include schemaLocation="../Schemas/Fault.xsd"/>
+        </xs:schema>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://group.vodafone.com/schema/vbm/payment/customer-money-transfer/v2"
+             elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:include schemaLocation="../Schemas/CustomerMoneyTransferVBM.xsd"/>
+        </xs:schema>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://group.vodafone.com/contract/vho/header/v1"
+             elementFormDefault="qualified" attributeFormDefault="unqualified">
+            <xs:include schemaLocation="../Schemas/Header.xsd"/>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="GetCustomerMoneyTransferListReqMessage">
+        <wsdl:documentation>This message is used as the request payload to the GetCustomerMoneyTransferList operation</wsdl:documentation>
+        <wsdl:part name="CustomerMoneyTransferCriteria" element="ns:GetCustomerMoneyTransferListVBMRequest"/>
+    </wsdl:message>
+    <wsdl:message name="GetCustomerMoneyTransferListRespMessage">
+        <wsdl:documentation>This message is used as the response payload to the GetCustomerMoneyTransferList operation</wsdl:documentation>
+        <wsdl:part name="CustomerMoneyTransferList" element="ns:GetCustomerMoneyTransferListVBMResponse"/>
+    </wsdl:message>
+    <wsdl:message name="VodafoneFault">
+        <wsdl:documentation>This message is used for propagating Error Context and Error Message</wsdl:documentation>
+        <wsdl:part name="VodafoneFault" element="ns1:Fault"/>
+    </wsdl:message>
+    <wsdl:message name="SyncCustomerMoneyTransferReqMessage">
+        <wsdl:documentation>This message is used as the request payload to the SyncCustomerMoneyTransfer operation</wsdl:documentation>
+        <wsdl:part name="CustomerMoneyTransferCriteria" element="ns:SyncCustomerMoneyTransferVBMRequest"/>
+    </wsdl:message>
+    <wsdl:message name="SyncCustomerMoneyTransferRespMessage">
+        <wsdl:documentation>This message is used as the response payload to the SyncCustomerMoneyTransfer operation</wsdl:documentation>
+        <wsdl:part name="CustomerMoneyTransferCriteria" element="ns:SyncCustomerMoneyTransferVBMResponse"/>
+    </wsdl:message>
+    <wsdl:message name="CreateCustomerMoneyTransferReqMessage">
+        <wsdl:documentation>This message is used as the request payload to the CreateCustomerMoneyTransfer operation</wsdl:documentation>
+        <wsdl:part name="CustomerMoneyTransferDetails" element="ns:CreateCustomerMoneyTransferVBMRequest"/>
+    </wsdl:message>
+    <wsdl:message name="CreateCustomerMoneyTransferRespMessage">
+        <wsdl:documentation>This message is used as the response payload to the CreateCustomerMoneyTransfer operation</wsdl:documentation>
+        <wsdl:part name="CustomerMoneyTransferDetails" element="ns:CreateCustomerMoneyTransferVBMResponse"/>
+    </wsdl:message>
+    <wsdl:message name="MessageHeaders">
+        <wsdl:documentation>This message is used as the header for SOAP request</wsdl:documentation>
+        <wsdl:part name="Source" element="ns2:Source"/>
+        <wsdl:part name="Correlation" element="ns2:Correlation"/>
+        <wsdl:part name="Cache" element="ns2:Cache"/>
+        <wsdl:part name="ServiceDocumentation" element="ns2:ServiceDocumentation"/>
+        <wsdl:part name="ResultStatus" element="ns2:ResultStatus"/>
+        <wsdl:part name="Destination" element="ns2:Destination"/>
+        <wsdl:part name="RouteInfo" element="ns2:RouteInfo"/>
+        <wsdl:part name="QueryResult" element="ns2:QueryResult"/>
+    </wsdl:message>
+    <wsdl:portType name="CustomerMoneyTransferInterface">
+        <wsdl:documentation>This interface contains operations for the CustomerMoneyTransfer API</wsdl:documentation>
+        <wsdl:operation name="GetCustomerMoneyTransferList">
+            <wsdl:documentation>This operation is used to GetCustomerMoneyTransferList</wsdl:documentation>
+            <wsdl:input message="tns:GetCustomerMoneyTransferListReqMessage"/>
+            <wsdl:output message="tns:GetCustomerMoneyTransferListRespMessage"/>
+            <wsdl:fault name="VodafoneFault" message="tns:VodafoneFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="SyncCustomerMoneyTransfer">
+            <wsdl:documentation>This operation is used to SyncCustomerMoneyTransfer</wsdl:documentation>
+            <wsdl:input message="tns:SyncCustomerMoneyTransferReqMessage"/>
+            <wsdl:output message="tns:SyncCustomerMoneyTransferRespMessage"/>
+            <wsdl:fault name="VodafoneFault" message="tns:VodafoneFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="CreateCustomerMoneyTransfer">
+            <wsdl:documentation>This operation is used to CreateCustomerMoneyTransfer</wsdl:documentation>
+            <wsdl:input message="tns:CreateCustomerMoneyTransferReqMessage"/>
+            <wsdl:output message="tns:CreateCustomerMoneyTransferRespMessage"/>
+            <wsdl:fault name="VodafoneFault" message="tns:VodafoneFault"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="CustomerMoneyTransferInterfaceEndpointBinding" type="tns:CustomerMoneyTransferInterface">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="GetCustomerMoneyTransferList">
+            <soap:operation style="document" soapAction="http://group.vodafone.com/contract/vbs/payment/customer-money-transfer/v2/get-list"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="CustomerMoneyTransferCriteria"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="CustomerMoneyTransferList"/>
+            </wsdl:output>
+            <wsdl:fault name="VodafoneFault">
+                <soap:fault name="VodafoneFault" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="SyncCustomerMoneyTransfer">
+            <soap:operation style="document" soapAction="http://group.vodafone.com/contract/vbs/payment/customer-money-transfer/v2/sync"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="CustomerMoneyTransferCriteria"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="CustomerMoneyTransferCriteria"/>
+            </wsdl:output>
+            <wsdl:fault name="VodafoneFault">
+                <soap:fault name="VodafoneFault" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="CreateCustomerMoneyTransfer">
+            <soap:operation style="document" soapAction="http://group.vodafone.com/contract/vbs/payment/customer-money-transfer/v2/create"/>
+            <wsdl:input>
+                <soap:body use="literal" parts="CustomerMoneyTransferDetails"/>
+                <soap:header message="tns:MessageHeaders" part="RouteInfo" use="literal"/>
+                <soap:header message="tns:MessageHeaders" part="Cache" use="literal"/>
+                <soap:header message="tns:MessageHeaders" part="Correlation" use="literal"/>
+                <soap:header message="tns:MessageHeaders" part="Destination" use="literal"/>
+                <soap:header message="tns:MessageHeaders" part="Source" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" parts="CustomerMoneyTransferDetails"/>
+                <soap:header message="tns:MessageHeaders" part="Correlation" use="literal"/>
+                <soap:header message="tns:MessageHeaders" part="Cache" use="literal"/>
+                <soap:header message="tns:MessageHeaders" part="ServiceDocumentation" use="literal"/>
+                <soap:header message="tns:MessageHeaders" part="ResultStatus" use="literal"/>
+                <soap:header message="tns:MessageHeaders" part="Source" use="literal"/>
+                <soap:header message="tns:MessageHeaders" part="Destination" use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="VodafoneFault">
+                <soap:fault name="VodafoneFault" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="CustomerMoneyTransferService">
+        <wsdl:port name="CustomerMoneyTransferInterfaceEndpoint" binding="tns:CustomerMoneyTransferInterfaceEndpointBinding">
+     <soap:address location="http://10.230.92.95:20000/CSM/Processes/CustomerMoneyTransfer/EndPoints/CustomerMoneyTransferService.serviceagent/CustomerMoneyTransferInterfaceEndpoint"/> 
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

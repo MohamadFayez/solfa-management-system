@@ -1,0 +1,32 @@
+<wsdl:definitions
+     name="getRequestIDdbReference"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/SolfaRequestApplication/BpmTibcoIntegration/getRequestIDdbReference"
+     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/SolfaRequestApplication/BpmTibcoIntegration/getRequestIDdbReference"
+     xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+     xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/getRequestIDdbReference"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+  <plt:partnerLinkType name="getRequestIDdbReference_plt" >
+    <plt:role name="getRequestIDdbReference_role" >
+      <plt:portType name="tns:getRequestIDdbReference_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/getRequestIDdbReference" schemaLocation="../Schemas/getRequestIDdbReference.xsd" />
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="getRequestIDdbReferenceInput_msg">
+        <wsdl:part name="getRequestIDdbReferenceInput_msg" element="db:getRequestIDdbReferenceInput"/>
+    </wsdl:message>
+    <wsdl:message name="getRequestIDdbReferenceOutputCollection_msg">
+        <wsdl:part name="getRequestIDdbReferenceOutputCollection" element="db:getRequestIDdbReferenceOutputCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="getRequestIDdbReference_ptt">
+        <wsdl:operation name="getRequestIDdbReference">
+            <wsdl:input message="tns:getRequestIDdbReferenceInput_msg"/>
+            <wsdl:output message="tns:getRequestIDdbReferenceOutputCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

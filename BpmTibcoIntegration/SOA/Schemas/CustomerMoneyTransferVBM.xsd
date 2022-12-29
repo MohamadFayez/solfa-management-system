@@ -1,0 +1,86 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:tns="http://group.vodafone.com/schema/vbm/payment/customer-money-transfer/v2"
+     xmlns:vbo="http://group.vodafone.com/schema/vbo/payment/customer-money-transfer/v2"
+     xmlns:cmn="http://group.vodafone.com/schema/common/v1" targetNamespace="http://group.vodafone.com/schema/vbm/payment/customer-money-transfer/v2"
+     elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+    <xsd:annotation>
+        <xsd:documentation>
+            <p>Vodafone Business Message Schema Definition for CustomerMoneyTransfer</p>
+        </xsd:documentation>
+    </xsd:annotation>
+
+<!-- ===================== Imports ============================ 
+-->
+    <xsd:import namespace="http://group.vodafone.com/schema/vbo/payment/customer-money-transfer/v2"
+         schemaLocation="CustomerMoneyTransferVBO.xsd"/>
+    <xsd:import namespace="http://group.vodafone.com/schema/common/v1" schemaLocation="CodeLists.xsd"/>
+    <xsd:complexType name="CreateCustomerMoneyTransferVBMRequestType">
+        <xsd:annotation>
+            <xsd:documentation>Type definition for the CreateCustomerMoneyTransfer request payload.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="CustomerMoneyTransferVBO" type="vbo:CustomerMoneyTransferVBOType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="CreateCustomerMoneyTransferVBMRequest" type="tns:CreateCustomerMoneyTransferVBMRequestType"/>
+    <xsd:complexType name="CreateCustomerMoneyTransferVBMResponseType">
+        <xsd:annotation>
+            <xsd:documentation>Type definition for the CreateCustomerMoneyTransfer response payload.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="CustomerMoneyTransferVBO" type="vbo:CustomerMoneyTransferVBOType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="CreateCustomerMoneyTransferVBMResponse" type="tns:CreateCustomerMoneyTransferVBMResponseType"/>
+    <xsd:complexType name="GetCustomerMoneyTransferListVBMRequestType">
+        <xsd:annotation>
+            <xsd:documentation>Type definition for the GetCustomerMoneyTransferList request payload.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="cmn:QueryType"/>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:element name="GetCustomerMoneyTransferListVBMRequest" type="tns:GetCustomerMoneyTransferListVBMRequestType"/>
+    <xsd:complexType name="GetCustomerMoneyTransferListVBMResponseType">
+        <xsd:annotation>
+            <xsd:documentation>Type definition for the GetCustomerMoneyTransferList response payload.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="CustomerMoneyTransferVBO" type="vbo:CustomerMoneyTransferVBOType" minOccurs="0"
+                 maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:element name="GetCustomerMoneyTransferListVBMResponse" type="tns:GetCustomerMoneyTransferListVBMResponseType"/>
+    <xsd:complexType name="SyncCustomerMoneyTransferVBMRequestType">
+        <xsd:annotation>
+            <xsd:documentation>Type definition for the SyncCustomerMoneyTransfer request payload.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="CustomerMoneyTransferVBO" type="vbo:CustomerMoneyTransferVBOType"/>
+        </xsd:sequence>
+        <xsd:attribute name="eventCode" type="cmn:EventCodeType"/>
+    </xsd:complexType>
+    <xsd:element name="SyncCustomerMoneyTransferVBMRequest" type="tns:SyncCustomerMoneyTransferVBMRequestType"/>
+    <xsd:complexType name="SyncCustomerMoneyTransferVBMResponseType">
+        <xsd:annotation>
+            <xsd:documentation>Type definition for the SyncCustomerMoneyTransfer response payload.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="CustomerMoneyTransferVBO" type="vbo:CustomerMoneyTransferVBOType"/>
+        </xsd:sequence>
+        <xsd:attribute name="eventCode" type="cmn:EventCodeType"/>
+    </xsd:complexType>
+    <xsd:element name="SyncCustomerMoneyTransferVBMResponse" type="tns:SyncCustomerMoneyTransferVBMResponseType"/>
+    <xsd:complexType name="NotifyCustomerMoneyTransferVBMRequestType">
+        <xsd:annotation>
+            <xsd:documentation>Type definition for the NotifyCustomerMoneyTransfer request payload.</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="CustomerMoneyTransferVBO" type="vbo:CustomerMoneyTransferVBOType"/>
+        </xsd:sequence>
+        <xsd:attribute name="eventCode" type="cmn:EventCodeType"/>
+    </xsd:complexType>
+    <xsd:element name="NotifyCustomerMoneyTransferVBMRequest" type="tns:NotifyCustomerMoneyTransferVBMRequestType"/>
+</xsd:schema>
+<!--(c) Vodafone Group Services Limited. All rights reserved. This document comprises proprietary and confidential information and copyright material belonging to Vodafone Group Services Limited. Other than as permitted by law, no part of this document may be reproduced, adapted, or distributed, in any form or by any means, without the prior written consent of Vodafone Group Services Limited. The information in this document is subject to change without notice. All trademarks acknowledged. Vodafone Group Services Limited - Confidential-->

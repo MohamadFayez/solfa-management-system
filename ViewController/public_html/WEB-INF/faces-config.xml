@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="windows-1256"?>
+<faces-config version="2.1" xmlns="http://java.sun.com/xml/ns/javaee">
+  <application>
+    <default-render-kit-id>oracle.adf.rich</default-render-kit-id>
+    <resource-bundle>
+      <base-name>view.ViewControllerBundle</base-name>
+      <var>res</var>
+    </resource-bundle>
+    <locale-config>
+      <default-locale>en</default-locale>
+      <supported-locale>ar</supported-locale>
+    </locale-config>
+    <message-bundle>view.ViewControllerBundle</message-bundle>
+  </application>
+</faces-config>

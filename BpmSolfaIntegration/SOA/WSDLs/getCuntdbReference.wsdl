@@ -1,0 +1,75 @@
+<wsdl:definitions
+     name="getCuntdbReference"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/SolfaRequestApplication/BpmSolfaProject/getCuntdbReference"
+     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/SolfaRequestApplication/BpmSolfaProject/getCuntdbReference"
+     xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+     xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/getCuntdbReference"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+  <plt:partnerLinkType name="getCuntdbReference_plt" >
+    <plt:role name="getCuntdbReference_role" >
+      <plt:portType name="tns:getCuntdbReference_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+  <plt:partnerLinkType name="getCuntdbReference_plt" >
+    <plt:role name="getCuntdbReference_role" >
+      <plt:portType name="tns:getCuntdbReference_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+  <plt:partnerLinkType name="getCuntdbReference_plt" >
+    <plt:role name="getCuntdbReference_role" >
+      <plt:portType name="tns:getCuntdbReference_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+  <plt:partnerLinkType name="getCuntdbReference_plt" >
+    <plt:role name="getCuntdbReference_role" >
+      <plt:portType name="tns:getCuntdbReference_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+  <plt:partnerLinkType name="getCuntdbReference_plt" >
+    <plt:role name="getCuntdbReference_role" >
+      <plt:portType name="tns:getCuntdbReference_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+  <plt:partnerLinkType name="getCuntdbReference_plt" >
+    <plt:role name="getCuntdbReference_role" >
+      <plt:portType name="tns:getCuntdbReference_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/getCuntdbReference" schemaLocation="../Schemas/getCuntdbReference.xsd" />
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/getCuntdbReference" schemaLocation="../Schemas/getCuntdbReference.xsd" />
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/getCuntdbReference" schemaLocation="../Schemas/getCuntdbReference.xsd" />
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/getCuntdbReference" schemaLocation="../Schemas/getCuntdbReference.xsd" />
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/getCuntdbReference" schemaLocation="../Schemas/getCuntdbReference.xsd" />
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/getCuntdbReference" schemaLocation="../Schemas/getCuntdbReference.xsd" />
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/getCuntdbReference" schemaLocation="../Schemas/getCuntdbReference.xsd" />
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="getCuntdbReferenceInput_msg">
+        <wsdl:part name="getCuntdbReferenceInput_msg" element="db:getCuntdbReferenceInput"/>
+    </wsdl:message>
+    <wsdl:message name="getCuntdbReferenceOutput_msg">
+        <wsdl:part name="getCuntdbReferenceOutput" element="db:getCuntdbReferenceOutput"/>
+    </wsdl:message>
+    <wsdl:portType name="getCuntdbReference_ptt">
+        <wsdl:operation name="getCuntdbReference">
+            <wsdl:input message="tns:getCuntdbReferenceInput_msg"/>
+            <wsdl:output message="tns:getCuntdbReferenceOutput_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

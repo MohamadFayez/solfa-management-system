@@ -1,0 +1,38 @@
+<wsdl:definitions
+     name="getStaffIDdbReference"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/SolfaRequestApplication/BpmSolfaIntegration/getStaffIDdbReference"
+     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/SolfaRequestApplication/BpmSolfaIntegration/getStaffIDdbReference"
+     xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+     xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/getStaffIDdbReference"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+  <plt:partnerLinkType name="getStaffIDdbReference_plt" >
+    <plt:role name="getStaffIDdbReference_role" >
+      <plt:portType name="tns:getStaffIDdbReference_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/getStaffIDdbReference" schemaLocation="../Schemas/getStaffIDdbReference.xsd" />
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/getStaffIDdbReference" schemaLocation="../Schemas/getStaffIDdbReference.xsd" />
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/getStaffIDdbReference" schemaLocation="../Schemas/getStaffIDdbReference.xsd" />
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="getStaffIDdbReferenceInput_msg">
+        <wsdl:part name="getStaffIDdbReferenceInput_msg" element="db:getStaffIDdbReferenceInput"/>
+    </wsdl:message>
+    <wsdl:message name="getStaffIDdbReferenceOutput_msg">
+        <wsdl:part name="getStaffIDdbReferenceOutput" element="db:getStaffIDdbReferenceOutput"/>
+    </wsdl:message>
+    <wsdl:portType name="getStaffIDdbReference_ptt">
+        <wsdl:operation name="getStaffIDdbReference">
+            <wsdl:input message="tns:getStaffIDdbReferenceInput_msg"/>
+            <wsdl:output message="tns:getStaffIDdbReferenceOutput_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

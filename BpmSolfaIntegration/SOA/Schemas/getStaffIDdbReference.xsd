@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/getStaffIDdbReference" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/getStaffIDdbReference" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="getStaffIDdbReferenceInput" type="getStaffIDdbReferenceInput"/>
+   <xs:complexType name="getStaffIDdbReferenceInput">
+      <xs:sequence>
+         <xs:element name="staffId" type="xs:string" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="getStaffIDdbReferenceOutput" type="getStaffIDdbReferenceOutput"/>
+   <xs:complexType name="getStaffIDdbReferenceOutput">
+      <xs:sequence>
+         <xs:element name="COUNT___" type="xs:decimal" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>

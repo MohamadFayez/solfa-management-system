@@ -1,0 +1,40 @@
+<adapter-config name="SolfaRequestdbReference" adapter="db" wsdlLocation="../WSDLs/SolfaRequestdbReference.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="solfaConn" location="eis/DB/solfa"/>
+  <endpoint-interaction portType="SolfaRequestdbReference_ptt" operation="insert">
+    <interaction-spec className="oracle.tip.adapter.db.DBWriteInteractionSpec">
+      <property name="DescriptorName" value="SolfaRequestdbReference.SolfaRequests"/>
+      <property name="DmlType" value="insert"/>
+      <property name="OutputCompletedXml" value="true"/>
+      <property name="MappingsMetaDataURL" value="SolfaRequestdbReference-or-mappings.xml"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+      <property name="DetectOmissions" value="true"/>
+      <property name="OptimizeMerge" value="true"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+  <endpoint-interaction portType="SolfaRequestdbReference_ptt" operation="update">
+    <interaction-spec className="oracle.tip.adapter.db.DBWriteInteractionSpec">
+      <property name="DescriptorName" value="SolfaRequestdbReference.SolfaRequests"/>
+      <property name="DmlType" value="update"/>
+      <property name="OutputCompletedXml" value="true"/>
+      <property name="MappingsMetaDataURL" value="SolfaRequestdbReference-or-mappings.xml"/>
+      <property name="DetectOmissions" value="true"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+      <property name="OptimizeMerge" value="true"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+  <endpoint-interaction portType="SolfaRequestdbReference_ptt" operation="merge">
+    <interaction-spec className="oracle.tip.adapter.db.DBWriteInteractionSpec">
+      <property name="DescriptorName" value="SolfaRequestdbReference.SolfaRequests"/>
+      <property name="DmlType" value="merge"/>
+      <property name="OutputCompletedXml" value="true"/>
+      <property name="MappingsMetaDataURL" value="SolfaRequestdbReference-or-mappings.xml"/>
+      <property name="OptimizeMerge" value="true"/>
+      <property name="DetectOmissions" value="true"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

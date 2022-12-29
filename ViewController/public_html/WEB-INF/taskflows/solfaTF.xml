@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="solfaTF">
+    <?audit suppress oracle.adfdt.controller.adfc.source.audit.TaskFlowReturnActivitiesNotDefined?>
+    <default-activity>Init_signOn</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <managed-bean id="__4">
+      <managed-bean-name>excel</managed-bean-name>
+      <managed-bean-class>com.truemega.solfa.view.utils.ExcelUtils</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__5">
+      <managed-bean-name>solfaUpload</managed-bean-name>
+      <managed-bean-class>com.truemega.solfa.view.beans.UploadEmpolyeeBean</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__2">
+      <managed-bean-name>signOn</managed-bean-name>
+      <managed-bean-class>com.truemega.solfa.view.beans.InitSignOn</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <view id="SolfaMain">
+      <page>/pages/fragments/solfaHomePage.jsff</page>
+    </view>
+    <view id="SolfaEmployeePage">
+      <page>/pages/fragments/SolfaEmployeePage.jsff</page>
+    </view>
+    <view id="SolfaRequestPage">
+      <page>/pages/fragments/SolfaRequestPage.jsff</page>
+    </view>
+    <method-call  id="Init_signOn">
+      <?audit suppress oracle.ide.xml.validation-incomplete?>
+      <method>#{pageFlowScope.signOn.initSignOn}</method>
+      <outcome>
+        <fixed-outcome>home</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__1">
+      <from-activity-id>SolfaMain</from-activity-id>
+      <control-flow-case id="__6">
+        <from-outcome>solfaReq</from-outcome>
+        <to-activity-id>SolfaRequestPage</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__7">
+        <from-outcome>solfaEmp</from-outcome>
+        <to-activity-id>SolfaEmployeePage</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__8">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__9">
+        <from-outcome>home</from-outcome>
+        <to-activity-id>SolfaMain</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+    <visibility>
+      <url-invoke-allowed/>
+    </visibility>
+  </task-flow-definition>
+</adfc-config>

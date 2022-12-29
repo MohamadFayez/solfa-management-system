@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SolfaEmployees"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="SOLFA_EMPLOYEES"
+  AliasName="SolfaEmployees"
+  BindingStyle="OracleName"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
+  <Attribute
+    Name="SolfaEmpId"
+    ColumnName="SOLFA_EMP_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="NUMBER"
+    TableName="SOLFA_EMPLOYEES"
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    Domain="oracle.jbo.domain.DBSequence"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_SequenceName" Value="SOLFA_EMPLOYEES_SEQ"/>
+      <Attr Name="_SequenceStart" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="StaffId"
+    Precision="20"
+    ColumnName="STAFF_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SOLFA_EMPLOYEES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="HasSolfa"
+    Precision="1"
+    ColumnName="HAS_SOLFA"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SOLFA_EMPLOYEES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SolfaAmount"
+    Precision="20"
+    ColumnName="SOLFA_AMOUNT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SOLFA_EMPLOYEES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="SOLFA_EMPLOYEES"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
+  <Key
+    Name="SolfaEmployeesPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SOLFA_EMPLOYEES_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.truemega.solfa.model.entity.SolfaEmployees.SolfaEmpId"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.truemega.solfa.model.ModelBundle"/>
+  </ResourceBundle>
+</Entity>

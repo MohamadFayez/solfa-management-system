@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SolfaRequests"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="SOLFA_REQUESTS"
+  AliasName="SolfaRequests"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="RequestNumber"
+    ColumnName="REQUEST_NUMBER"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="NUMBER"
+    TableName="SOLFA_REQUESTS"
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    Domain="oracle.jbo.domain.DBSequence"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_SequenceName" Value="SOLFA_REQUESTS_SEQ"/>
+      <Attr Name="_SequenceStart" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RequestDate"
+    ColumnName="REQUEST_DATE"
+    SQLType="DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="SOLFA_REQUESTS"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
+  <Attribute
+    Name="StaffId"
+    Precision="20"
+    ColumnName="STAFF_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SOLFA_REQUESTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Msisdn"
+    Precision="20"
+    ColumnName="MSISDN"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SOLFA_REQUESTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Pin"
+    Precision="20"
+    ColumnName="PIN"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SOLFA_REQUESTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="AmountAllowed"
+    Precision="20"
+    ColumnName="AMOUNT_ALLOWED"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SOLFA_REQUESTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="AmountRequested"
+    Precision="20"
+    ColumnName="AMOUNT_REQUESTED"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SOLFA_REQUESTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RequestStatus"
+    Precision="20"
+    ColumnName="REQUEST_STATUS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SOLFA_REQUESTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="EmployeeBand"
+    Precision="20"
+    ColumnName="EMPLOYEE_BAND"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SOLFA_REQUESTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="SolfaRequestsPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SOLFA_REQUESTS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.truemega.solfa.model.entity.SolfaRequests.RequestNumber"/>
+    </AttrArray>
+  </Key>
+</Entity>

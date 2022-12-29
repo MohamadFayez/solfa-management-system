@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.example.org"
+            targetNamespace="http://www.example.org" elementFormDefault="qualified">
+  <xsd:element name="TibcoRequest" type="TibcoRequestType">
+    <xsd:annotation>
+      <xsd:documentation>A sample element</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="TibcoRequestType">
+    <xsd:sequence>
+      <xsd:element name="MSISDN" type="xsd:string"/>
+      <xsd:element name="FoundingMSISDN" type="xsd:string"/>
+      <xsd:element name="Amount" type="xsd:string"/>
+      <xsd:element name="PIN" type="xsd:string"/>
+      <xsd:element name="StaffID" type="xsd:string"/>
+      </xsd:sequence>
+    
+  </xsd:complexType>
+</xsd:schema>

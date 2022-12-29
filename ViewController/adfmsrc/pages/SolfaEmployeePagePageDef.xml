@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="SolfaEmployeePagePageDef"
+                Package="pages">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SolfaEmployeesView" DataControl="SolfaAppModuleDataControl"
+              id="SolfaEmployeesViewIterator" RangeSize="-1"/>
+    <iterator id="EmployeesViewIterator" Binds="EmployeeView" DataControl="SolfaAppModuleDataControl"
+              RangeSize="25"/>
+  </executables>
+  <bindings>
+    <action IterBinding="SolfaEmployeesViewIterator" id="CreateInsert"
+            InstanceName="SolfaAppModuleDataControl.SolfaEmployeesView" DataControl="SolfaAppModuleDataControl"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <tree IterBinding="SolfaEmployeesViewIterator" id="SolfaEmployeesView">
+      <nodeDefinition DefName="com.truemega.solfa.model.view.SolfaEmployeesView" Name="SolfaEmployeesView0">
+        <AttrNames>
+          <Item Value="SolfaEmpId"/>
+          <Item Value="CreatedDate"/>
+          <Item Value="HasSolfa"/>
+          <Item Value="SolfaAmount"/>
+          <Item Value="StaffId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="SolfaEmployeesViewIterator" id="Execute"
+            InstanceName="SolfaAppModuleDataControl.SolfaEmployeesView" DataControl="SolfaAppModuleDataControl"
+            RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="SolfaAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="SolfaAppModuleDataControl"/>
+    <methodAction id="closeOpenedRequest" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="closeOpenedRequest" IsViewObjectMethod="false" DataControl="SolfaAppModuleDataControl"
+                  InstanceName="data.SolfaAppModuleDataControl.dataProvider"/>
+    <methodAction id="insertTrackData" RequiresUpdateModel="true" Action="invokeMethod" MethodName="insertTrackData"
+                  IsViewObjectMethod="false" DataControl="SolfaAppModuleDataControl"
+                  InstanceName="data.SolfaAppModuleDataControl.dataProvider"/>
+    <methodAction id="removeEmployeeData" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="removeEmployeeData" IsViewObjectMethod="false" DataControl="SolfaAppModuleDataControl"
+                  InstanceName="data.SolfaAppModuleDataControl.dataProvider"/>
+    <methodAction id="isDirty" RequiresUpdateModel="true" Action="invokeMethod" MethodName="isDirty"
+                  IsViewObjectMethod="false" DataControl="SolfaAppModuleDataControl"
+                  InstanceName="data.SolfaAppModuleDataControl.dataProvider"
+                  ReturnName="data.SolfaAppModuleDataControl.methodResults.isDirty_SolfaAppModuleDataControl_dataProvider_isDirty_result"/>
+    <attributeValues IterBinding="EmployeesViewIterator" id="SolfaEmpId">
+      <AttrNames>
+        <Item Value="SolfaEmpId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="EmployeesViewIterator" id="StaffId">
+      <AttrNames>
+        <Item Value="StaffId"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="EmployeesViewIterator" StaticList="false" Uses="LOV_HasSolfa" id="HasSolfa"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="EmployeesViewIterator" id="SolfaAmount">
+      <AttrNames>
+        <Item Value="SolfaAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="SolfaEmployeesViewIterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

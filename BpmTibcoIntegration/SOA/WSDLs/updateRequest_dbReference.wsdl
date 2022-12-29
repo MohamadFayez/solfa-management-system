@@ -1,0 +1,52 @@
+<wsdl:definitions
+     name="updateRequest-dbReference"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/SolfaRequestApplication/BpmTibcoIntegration/updateRequest_dbReference"
+     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/SolfaRequestApplication/BpmTibcoIntegration/updateRequest_dbReference"
+     xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+     xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/updateRequest-dbReference"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+  <plt:partnerLinkType name="updateRequest_dbReference_plt" >
+    <plt:role name="updateRequest-dbReference_role" >
+      <plt:portType name="tns:updateRequest_dbReference_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+  <plt:partnerLinkType name="updateRequest_dbReference_plt" >
+    <plt:role name="updateRequest-dbReference_role" >
+      <plt:portType name="tns:updateRequest_dbReference_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+  <plt:partnerLinkType name="updateRequest_dbReference_plt" >
+    <plt:role name="updateRequest-dbReference_role" >
+      <plt:portType name="tns:updateRequest_dbReference_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+  <plt:partnerLinkType name="updateRequest_dbReference_plt" >
+    <plt:role name="updateRequest-dbReference_role" >
+      <plt:portType name="tns:updateRequest_dbReference_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/updateRequest-dbReference" schemaLocation="../Schemas/updateRequest_dbReference.xsd" />
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/updateRequest-dbReference" schemaLocation="../Schemas/updateRequest_dbReference.xsd" />
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/updateRequest-dbReference" schemaLocation="../Schemas/updateRequest_dbReference.xsd" />
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/updateRequest-dbReference" schemaLocation="../Schemas/updateRequest_dbReference.xsd" />
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="updateRequest-dbReferenceInput_msg">
+        <wsdl:part name="updateRequest-dbReferenceInput_msg" element="db:updateRequest-dbReferenceInput"/>
+    </wsdl:message>
+    <wsdl:portType name="updateRequest_dbReference_ptt">
+        <wsdl:operation name="updateRequest-dbReference">
+            <wsdl:input message="tns:updateRequest-dbReferenceInput_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

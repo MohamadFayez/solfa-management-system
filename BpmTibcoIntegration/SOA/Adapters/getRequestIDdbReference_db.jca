@@ -1,0 +1,11 @@
+<adapter-config name="getRequestIDdbReference" adapter="db" wsdlLocation="../WSDLs/getRequestIDdbReference.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="fnview" location="eis/DB/solfa"/>
+  <endpoint-interaction portType="getRequestIDdbReference_ptt" operation="getRequestIDdbReference">
+    <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
+      <property name="SqlString" value="select solfa_employees_seq.nextval from dual"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?oracleBPM version="12.1.3" fileRevision="20120601"?>
+<processDocumentation xmlns="http://xmlns.oracle.com/bpm/taskMetadataService/processDocumentation">
+   <component name="TibcoIntegrationProcess">
+      <topicDocumentations>
+         <topicDocumentation name="TibcoIntegrationProcess"/>
+         <topicDocumentation name="ACT22461449432719">
+            <labels>
+               <label locale="en">Create Request in DB with status Intiated</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT22481940115919">
+            <labels>
+               <label locale="en">Generate Request Id</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT23065766804277">
+            <labels>
+               <label locale="en">AssignVodafoneFault</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT23153063246016">
+            <labels>
+               <label locale="en">update request status to open</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT23153271508220">
+            <labels>
+               <label locale="en">Query User Requests</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT23153378465895">
+            <labels>
+               <label locale="en">update request status to failed</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT23172012488135">
+            <labels>
+               <label locale="en">update Request  status to failed</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT2774062557686">
+            <labels>
+               <label locale="en">Subprocess</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="ACT27740701273379">
+            <labels>
+               <label locale="en">ServiceTask</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT27740625769531">
+            <labels>
+               <label locale="en">Start</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="EVT2774062576962">
+            <labels>
+               <label locale="en">End</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="EVT27740747703754">
+            <labels>
+               <label locale="en">BoundaryEvent1</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf27740625769675"/>
+         <topicDocumentation name="sf27740703055447"/>
+         <topicDocumentation name="sf27740786792955"/>
+         <topicDocumentation name="EVT22448398513687">
+            <labels>
+               <label locale="en">Start</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT2244839851362">
+            <labels>
+               <label locale="en">End</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT2315329280701">
+            <labels>
+               <label locale="en">End</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT27740674555288">
+            <labels>
+               <label locale="en">BoundaryEvent</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW22461446128340">
+            <labels>
+               <label locale="en">check TIBCO response status</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW23065764077947">
+            <labels>
+               <label locale="en">VodafoneFault</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW23153284734741">
+            <labels>
+               <label locale="en">check existance of initiated or open requests.</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW27740779725151">
+            <labels>
+               <label locale="en">ExclusiveGateway</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf2246146183958"/>
+         <topicDocumentation name="sf22481948221447"/>
+         <topicDocumentation name="sf23065765278856"/>
+         <topicDocumentation name="sf23065770050596"/>
+         <topicDocumentation name="sf23153048310380"/>
+         <topicDocumentation name="sf23153052561340"/>
+         <topicDocumentation name="sf23153065922681"/>
+         <topicDocumentation name="sf23153092070337"/>
+         <topicDocumentation name="sf23153282420135"/>
+         <topicDocumentation name="sf23153288714994"/>
+         <topicDocumentation name="sf23153302956576"/>
+         <topicDocumentation name="sf23153382590876"/>
+         <topicDocumentation name="sf23172020478168"/>
+         <topicDocumentation name="sf23172020974749"/>
+         <topicDocumentation name="sf22448509285535"/>
+         <topicDocumentation name="sf27740678652287"/>
+         <topicDocumentation name="sf27740780338735"/>
+         <topicDocumentation name="sf27740879980950">
+            <labels>
+               <label locale="en"></label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+      </topicDocumentations>
+   </component>
+</processDocumentation>

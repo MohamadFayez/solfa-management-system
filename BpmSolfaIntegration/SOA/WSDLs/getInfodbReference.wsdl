@@ -1,0 +1,49 @@
+<wsdl:definitions
+     name="getInfodbReference"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/SolfaRequestApplication/BpmSolfaProject/getInfodbReference"
+     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/SolfaRequestApplication/BpmSolfaProject/getInfodbReference"
+     xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+     xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/getInfodbReference"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+  <plt:partnerLinkType name="getInfodbReference_plt" >
+    <plt:role name="getInfodbReference_role" >
+      <plt:portType name="tns:getInfodbReference_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+  <plt:partnerLinkType name="getInfodbReference_plt" >
+    <plt:role name="getInfodbReference_role" >
+      <plt:portType name="tns:getInfodbReference_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/getInfodbReference" schemaLocation="../Schemas/getInfodbReference.xsd" />
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/getInfodbReference" schemaLocation="../Schemas/getInfodbReference.xsd" />
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/getInfodbReference" schemaLocation="../Schemas/getInfodbReference.xsd" />
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/getInfodbReference" schemaLocation="../Schemas/getInfodbReference.xsd" />
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/getInfodbReference" schemaLocation="../Schemas/getInfodbReference.xsd" />
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="getInfodbReferenceInput_msg">
+        <wsdl:part name="getInfodbReferenceInput_msg" element="db:getInfodbReferenceInput"/>
+    </wsdl:message>
+    <wsdl:message name="getInfodbReferenceOutputCollection_msg">
+        <wsdl:part name="getInfodbReferenceOutputCollection" element="db:getInfodbReferenceOutputCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="getInfodbReference_ptt">
+        <wsdl:operation name="getInfodbReference">
+            <wsdl:input message="tns:getInfodbReferenceInput_msg"/>
+            <wsdl:output message="tns:getInfodbReferenceOutputCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

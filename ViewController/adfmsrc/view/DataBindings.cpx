@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.2.15" id="DataBindings"
+             SeparateXMLFiles="false" Package="view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/pages/fragments/SolfaEmployeePage.jsff" usageId="view_SolfaEmployeePagePageDef"/>
+    <page path="/pages/fragments/SolfaRequestPage.jsff" usageId="view_SolfaRequestPagePageDef"/>
+    <page path="/pages/fragments/solfaHomePage.jsff" usageId="view_solfaHomePageDef"/>
+    <page path="/pages/solfa.jsf" usageId="view_solfaPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="view_SolfaEmployeePagePageDef" path="pages.SolfaEmployeePagePageDef"/>
+    <page id="view_SolfaRequestPagePageDef" path="pages.SolfaRequestPagePageDef"/>
+    <page id="view_solfaHomePageDef" path="pages.solfaHomePageDef"/>
+    <page id="view_solfaPageDef" path="pages.solfaPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="SolfaAppModuleDataControl" Package="com.truemega.solfa.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="SolfaAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

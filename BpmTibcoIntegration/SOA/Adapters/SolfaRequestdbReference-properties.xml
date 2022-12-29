@@ -1,0 +1,38 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+   <entry key="SOLFA_REQUESTS.STAFF_ID:db_column_type">VARCHAR2</entry>
+   <entry key="SOLFA_REQUESTS.AMOUNT_REQUESTED:db_column_not_null">false</entry>
+   <entry key="SOLFA_REQUESTS.PIN:db_column_size">20</entry>
+   <entry key="SOLFA_REQUESTS.REQUEST_NUMBER:db_column_precision">38</entry>
+   <entry key="SOLFA_REQUESTS.REQUEST_NUMBER:db_column_not_null">true</entry>
+   <entry key="SOLFA_REQUESTS.MSISDN:db_column_size">20</entry>
+   <entry key="SOLFA_REQUESTS.AMOUNT_ALLOWED:db_column_not_null">false</entry>
+   <entry key="SOLFA_REQUESTS.STAFF_ID:db_column_not_null">false</entry>
+   <entry key="SOLFA_REQUESTS.MSISDN:db_column_not_null">false</entry>
+   <entry key="SOLFA_REQUESTS.REQUEST_NUMBER:db_column_type">NUMBER</entry>
+   <entry key="SOLFA_REQUESTS.REQUEST_STATUS:db_column_type">VARCHAR2</entry>
+   <entry key="SOLFA_REQUESTS.REQUEST_NUMBER:db_column_scale">0</entry>
+   <entry key="SOLFA_REQUESTS.AMOUNT_REQUESTED:db_column_type">VARCHAR2</entry>
+   <entry key="SOLFA_REQUESTS.REQUEST_DATE:db_column_not_null">false</entry>
+   <entry key="SOLFA_REQUESTS.REQUEST_DATE:db_column_type">DATE</entry>
+   <entry key="SOLFA_REQUESTS.STAFF_ID:db_column_size">20</entry>
+   <entry key="SOLFA_REQUESTS.PIN:db_column_not_null">false</entry>
+   <entry key="SOLFA_REQUESTS.AMOUNT_ALLOWED:db_column_type">VARCHAR2</entry>
+   <entry key="SOLFA_REQUESTS.PIN:db_column_type">VARCHAR2</entry>
+   <entry key="SOLFA_REQUESTS.REQUEST_STATUS:db_column_size">20</entry>
+   <entry key="root_descriptor_alias">SOLFA_REQUESTS</entry>
+   <entry key="SOLFA_REQUESTS.MSISDN:db_column_type">VARCHAR2</entry>
+   <entry key="SOLFA_REQUESTS:db_column_7">REQUEST_STATUS</entry>
+   <entry key="SOLFA_REQUESTS.AMOUNT_REQUESTED:db_column_size">20</entry>
+   <entry key="SOLFA_REQUESTS:db_column_6">AMOUNT_REQUESTED</entry>
+   <entry key="SOLFA_REQUESTS:db_column_5">AMOUNT_ALLOWED</entry>
+   <entry key="SOLFA_REQUESTS:db_column_4">PIN</entry>
+   <entry key="SOLFA_REQUESTS:db_table_type">TABLE</entry>
+   <entry key="SOLFA_REQUESTS:db_column_3">MSISDN</entry>
+   <entry key="SOLFA_REQUESTS.REQUEST_STATUS:db_column_not_null">false</entry>
+   <entry key="SOLFA_REQUESTS:db_column_2">STAFF_ID</entry>
+   <entry key="SOLFA_REQUESTS:db_column_1">REQUEST_DATE</entry>
+   <entry key="SOLFA_REQUESTS:db_column_0">REQUEST_NUMBER</entry>
+   <entry key="SOLFA_REQUESTS.AMOUNT_ALLOWED:db_column_size">20</entry>
+</properties>

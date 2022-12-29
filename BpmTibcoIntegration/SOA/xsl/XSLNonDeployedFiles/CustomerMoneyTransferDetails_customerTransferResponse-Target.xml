@@ -1,0 +1,6 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<tns:TibcoResponse xmlns:vbo="http://group.vodafone.com/schema/vbo/payment/customer-money-transfer/v2" xmlns:cmn="http://group.vodafone.com/schema/common/v1" xmlns:ns2="urn:un:unece:uncefact:documentation:standard:CoreComponentType:2" xmlns:ns1="http://group.vodafone.com/schema/extension/vbo/payment/customer-money-transfer/v2" xmlns:tns="http://www.example.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org file:/D:/trunk/Code/HRAT_Revamp/Code/Solfa/BpmTibcoIntegration/SOA/Schemas/TibocResponse.xsd">
+   <tns:TransactionID/>
+   <tns:TransferID/>
+   <tns:Status/>
+</tns:TibcoResponse>

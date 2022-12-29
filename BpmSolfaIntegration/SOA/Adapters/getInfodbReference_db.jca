@@ -1,0 +1,11 @@
+<adapter-config name="getInfodbReference" adapter="db" wsdlLocation="../WSDLs/getInfodbReference.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory UIConnectionName="solfaConn" location="eis/DB/solfa"/>
+  <endpoint-interaction portType="getInfodbReference_ptt" operation="getInfodbReference">
+    <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
+      <property name="SqlString" value="SELECT   STAFF_ID , HAS_SOLFA,  SOLFA_AMOUNT, TO_CHAR( CREATED_DATE,'MON') EXCEL_MON ,TO_CHAR(ADD_Months(CREATED_DATE,1),'MON') EXCEL_NEXT_MON    , TO_CHAR(SYSDATE,'MON') REQ_MON   ,TO_CHAR(SYSDATE,'DD') REQ_DAY,((ADD_MONTHS(SYSDATE, -1)-(TO_NUMBER(TO_CHAR(SYSDATE,'DD'))-1))+34) MAX_DATE FROM SOLFA_EMPLOYEES WHERE (STAFF_ID=#staffId)"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

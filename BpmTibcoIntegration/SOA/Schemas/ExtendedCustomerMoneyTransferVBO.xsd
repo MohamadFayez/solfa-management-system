@@ -1,0 +1,47 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:tns="http://group.vodafone.com/schema/extension/vbo/payment/customer-money-transfer/v2"
+     xmlns:cct="urn:un:unece:uncefact:documentation:standard:CoreComponentType:2" targetNamespace="http://group.vodafone.com/schema/extension/vbo/payment/customer-money-transfer/v2"
+     elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+    <xsd:annotation>
+        <xsd:documentation>
+            <p>Schema Definition for CustomerMoneyTransfer Extension</p>
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="urn:un:unece:uncefact:documentation:standard:CoreComponentType:2" schemaLocation="CoreComponentType_2p0.xsd"/>
+    <xsd:complexType name="ExtendedCustomerMoneyTransferVBOType"/>
+    <xsd:complexType name="ExtendedCustomerMoneyTransferDetailsType"/>
+    <xsd:complexType name="ExtendedRelatedCustomerMoneyTransferType"/>
+    <xsd:complexType name="ExtendedCustomerMoneyTransferRolesType"/>
+    <xsd:complexType name="ExtendedCustomerMoneyTransferPartsType"/>
+    <xsd:complexType name="ExtendedCustomerBalanceAccountsType"/>
+    <xsd:complexType name="ExtendedCustomerAccountType"/>
+    <xsd:complexType name="ExtendedCustomerInvoiceType"/>
+    <xsd:complexType name="ExtendedPaymentPlanType"/>
+    <xsd:complexType name="ExtendedPayerCurrencyType"/>
+    <xsd:complexType name="ExtendedReceiverCurrencyType"/>
+    <xsd:complexType name="ExtendedPaymentMethodType"/>
+    <xsd:complexType name="ExtendedChannelType"/>
+    <xsd:complexType name="ExtendedPayerLocationType"/>
+    <xsd:complexType name="ExtendedPayerType"/>
+    <xsd:complexType name="ExtendedReceiverType"/>
+    <xsd:complexType name="ExtendedUserType"/>
+    <xsd:complexType name="ExtendedApproverType"/>
+    <xsd:complexType name="ExtendedAuthoriserType"/>
+    <xsd:complexType name="ExtendedWorkforceAgentType"/>
+    <xsd:complexType name="ExtendedMoneyTransferAttachmentType"/>
+    <xsd:complexType name="ExtendedRequestType"/>
+    <xsd:complexType name="ExtendedCurrencyType"/>
+    <xsd:complexType name="ExtendedCardPaymentType"/>
+    <xsd:complexType name="ExtendedLineItemsType"/>
+    <xsd:complexType name="ExtendedLineItemType"/>
+    <xsd:complexType name="ExtendedPriceType"/>
+</xsd:schema>
+<!--(c) Vodafone Group Services Limited. All rights reserved. This document 
+	comprises proprietary and confidential information and copyright material 
+	belonging to Vodafone Group Services Limited. Other than as permitted by 
+	law, no part of this document may be reproduced, adapted, or distributed, 
+	in any form or by any means, without the prior written consent of Vodafone 
+	Group Services Limited. The information in this document is subject to change 
+	without notice. All trademarks acknowledged. Vodafone Group Services Limited 
+	- Confidential -->

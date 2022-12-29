@@ -1,0 +1,26 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/SolfaRequestdbReference" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/SolfaRequestdbReference" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="SolfaRequestsCollection" type="SolfaRequestsCollection"/>
+   <xs:complexType name="SolfaRequestsCollection">
+      <xs:sequence>
+         <xs:element name="SolfaRequests" type="SolfaRequests" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="SolfaRequests">
+      <xs:sequence>
+         <xs:element name="requestNumber" type="xs:decimal" nillable="true"/>
+         <xs:element name="requestDate" type="xs:dateTime" minOccurs="0" nillable="true"/>
+         <xs:element name="staffId" type="string20" minOccurs="0" nillable="true"/>
+         <xs:element name="msisdn" type="string20" minOccurs="0" nillable="true"/>
+         <xs:element name="pin" type="string20" minOccurs="0" nillable="true"/>
+         <xs:element name="amountAllowed" type="string20" minOccurs="0" nillable="true"/>
+         <xs:element name="amountRequested" type="string20" minOccurs="0" nillable="true"/>
+         <xs:element name="requestStatus" type="string20" minOccurs="0" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="string20">
+      <xs:restriction base="xs:string">
+         <xs:maxLength value="20"/>
+      </xs:restriction>
+   </xs:simpleType>
+</xs:schema>

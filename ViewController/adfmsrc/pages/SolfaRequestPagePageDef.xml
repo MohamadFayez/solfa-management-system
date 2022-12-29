@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="SolfaRequestPagePageDef"
+                Package="pages">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SolfaRequestReadView" RangeSize="25" DataControl="SolfaAppModuleDataControl"
+              id="SolfaRequestReadViewIterator"/>
+    <searchRegion Criteria="SolfaRequestROVCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="SolfaRequestReadViewIterator" id="SolfaRequestROVCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="SolfaRequestReadViewIterator" id="SolfaRequestReadView">
+      <nodeDefinition DefName="com.truemega.solfa.model.view.SolfaRequestReadView" Name="SolfaRequestReadView0">
+        <AttrNames>
+          <Item Value="RequestNumber"/>
+          <Item Value="RequestDate"/>
+          <Item Value="StaffId"/>
+          <Item Value="Msisdn"/>
+          <Item Value="Pin"/>
+          <Item Value="AmountAllowed"/>
+          <Item Value="AmountRequested"/>
+          <Item Value="RequestStatus"/>
+          <Item Value="EmployeeBand"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

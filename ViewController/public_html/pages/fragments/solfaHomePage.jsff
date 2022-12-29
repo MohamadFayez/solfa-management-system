@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:facelets="http://xmlns.oracle.com/jdev/webapp/facelets"
+                xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:panelGroupLayout id="psl1" styleClass="AFStretchWidth" halign="center">
+        <af:panelGridLayout id="pgl2">
+            <af:gridRow marginTop="5px" height="150px" id="gr6">
+                <af:gridCell marginStart="5px" width="34%" id="gc8"/>
+                <af:gridCell marginStart="5px" width="33%" id="gc9"/>
+                <af:gridCell marginStart="5px" width="33%" marginEnd="5px" id="gc10"/>
+            </af:gridRow>
+            <af:gridRow marginTop="5px" height="450px" marginBottom="5px" id="gr7">
+                <af:gridCell marginStart="5px" width="34%" id="gc11"/>
+                <af:gridCell marginStart="5px" width="33%" id="gc12">
+                    <af:panelGroupLayout id="pgl5" layout="scroll" inlineStyle="width:214px;" halign="start">
+                        <af:link text="#{res.EMPLOYEES_SOLFA_REQUEST}" id="l5" immediate="true"
+                                 icon="#{resource['images:report.png']}" action="solfaReq"/>
+                        <af:separator id="s5"/>
+                        <af:link text="#{res.EMPLOYEES_SOLFA_UPLOADS}" id="l6" immediate="true"
+                                 icon="#{resource['images:upload.png']}" action="solfaEmp">
+                            <af:setActionListener from="upload" to="#{sessionScope.page}"/>
+                        </af:link>
+                                 
+                                 <af:separator id="s1"/>
+                        <af:link visible="false" text="#{res.EMPLOYEES_SOLFA_EDIT}" id="l1" immediate="true"
+                                 icon="#{resource['images:edit.png']}" action="solfaEmp">
+                            <af:setActionListener from="edit" to="#{sessionScope.page}"/>
+                        </af:link>
+                    </af:panelGroupLayout>
+                </af:gridCell>
+                <af:gridCell marginStart="5px" width="33%" marginEnd="5px" id="gc13"/>
+            </af:gridRow>
+        </af:panelGridLayout>
+    </af:panelGroupLayout>
+</ui:composition>

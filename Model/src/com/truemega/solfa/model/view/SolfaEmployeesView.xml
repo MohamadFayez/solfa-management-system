@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="windows-1256" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SolfaEmployeesView"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="SolfaEmployees.SOLFA_EMP_ID, 
+       SolfaEmployees.STAFF_ID, 
+       SolfaEmployees.HAS_SOLFA, 
+       SolfaEmployees.SOLFA_AMOUNT, 
+       SolfaEmployees.CREATED_DATE"
+  FromList="SOLFA_EMPLOYEES SolfaEmployees"
+  FetchMode="FETCH_AS_NEEDED"
+  RowClass="com.truemega.solfa.model.view.SolfaEmployeesViewRowImpl"
+  ComponentClass="com.truemega.solfa.model.view.SolfaEmployeesViewImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="YesNoView"
+    ViewObjectName="com.truemega.solfa.model.view.YesNoView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_HasSolfa"
+    ListVOName="YesNoView"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="HasSolfa"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Value"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="SolfaEmployees"
+    Entity="com.truemega.solfa.model.entity.SolfaEmployees"/>
+  <ViewAttribute
+    Name="SolfaEmpId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="SolfaEmpId"
+    EntityUsage="SolfaEmployees"
+    AliasName="SOLFA_EMP_ID"
+    IsUpdateable="while_insert"
+    IsQueriable="false"/>
+  <ViewAttribute
+    Name="StaffId"
+    PrecisionRule="true"
+    EntityAttrName="StaffId"
+    EntityUsage="SolfaEmployees"
+    AliasName="STAFF_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="STAFF_ID"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="HasSolfa"
+    PrecisionRule="true"
+    EntityAttrName="HasSolfa"
+    EntityUsage="SolfaEmployees"
+    AliasName="HAS_SOLFA"
+    LOVName="LOV_HasSolfa">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <LABEL
+          ResId="HAS_SOLFA"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SolfaAmount"
+    PrecisionRule="true"
+    EntityAttrName="SolfaAmount"
+    EntityUsage="SolfaEmployees"
+    AliasName="SOLFA_AMOUNT">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="SOLFA_AMOUNT"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="SolfaEmployees"
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"
+    IsQueriable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="CREATED__ON"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.truemega.solfa.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

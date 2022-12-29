@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.example.org"
+            targetNamespace="http://www.example.org" elementFormDefault="qualified">
+  <xsd:element name="solfaInfo" type="sofaType">
+    <xsd:annotation>
+      <xsd:documentation>A sample element</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="sofaType">
+    <xsd:sequence>
+      <xsd:element name="staffId" type="xsd:string"/>
+      <xsd:element name="hasSolfa" type="xsd:string"/>
+      <xsd:element name="solfaAmount" type="xsd:string"/>
+      <xsd:element name="excelMon" type="xsd:string"/>
+      <xsd:element name="excelNextMon" type="xsd:string"/>
+      <xsd:element name="reqMon" type="xsd:string"/>
+      <xsd:element name="reqDay" type="xsd:string"/>
+      <xsd:element name="status" type="xsd:string"/>
+      <xsd:element name="count" type="xsd:decimal"/>
+      <xsd:element name="message" type="xsd:string"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

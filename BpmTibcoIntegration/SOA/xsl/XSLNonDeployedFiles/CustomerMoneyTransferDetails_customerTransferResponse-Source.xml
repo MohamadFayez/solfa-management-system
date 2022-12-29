@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CreateCustomerMoneyTransferVBMResponse xmlns="http://group.vodafone.com/schema/vbm/payment/customer-money-transfer/v2">
+   <CustomerMoneyTransferVBO actionCode="ADD">
+      <Details xmlns="http://group.vodafone.com/schema/vbo/payment/customer-money-transfer/v2"/>
+      <RelatedMoneyTransfers xmlns="http://group.vodafone.com/schema/vbo/payment/customer-money-transfer/v2">
+         <MoneyTransfer/>
+         <MoneyTransfer/>
+         <MoneyTransfer/>
+      </RelatedMoneyTransfers>
+      <Roles xmlns="http://group.vodafone.com/schema/vbo/payment/customer-money-transfer/v2"/>
+      <Parts xmlns="http://group.vodafone.com/schema/vbo/payment/customer-money-transfer/v2"/>
+      <Extension xmlns="http://group.vodafone.com/schema/vbo/payment/customer-money-transfer/v2"/>
+   </CustomerMoneyTransferVBO>
+</CreateCustomerMoneyTransferVBMResponse>

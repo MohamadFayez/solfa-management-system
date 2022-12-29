@@ -1,0 +1,27 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/getInfodbReference" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/getInfodbReference" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="getInfodbReferenceInput" type="getInfodbReferenceInput"/>
+   <xs:complexType name="getInfodbReferenceInput">
+      <xs:sequence>
+         <xs:element name="staffId" type="xs:string" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="getInfodbReferenceOutputCollection" type="getInfodbReferenceOutputCollection"/>
+   <xs:complexType name="getInfodbReferenceOutputCollection">
+      <xs:sequence>
+         <xs:element name="getInfodbReferenceOutput" type="getInfodbReferenceOutput" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="getInfodbReferenceOutput">
+      <xs:sequence>
+         <xs:element name="STAFF_ID" type="xs:string" nillable="true"/>
+         <xs:element name="HAS_SOLFA" type="xs:string" nillable="true"/>
+         <xs:element name="SOLFA_AMOUNT" type="xs:string" nillable="true"/>
+         <xs:element name="EXCEL_MON" type="xs:string" nillable="true"/>
+         <xs:element name="EXCEL_NEXT_MON" type="xs:string" nillable="true"/>
+         <xs:element name="REQ_MON" type="xs:string" nillable="true"/>
+         <xs:element name="REQ_DAY" type="xs:string" nillable="true"/>
+         <xs:element name="MAX_DATE" type="xs:dateTime" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>

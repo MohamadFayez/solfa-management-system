@@ -1,0 +1,5 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ProviderSettings xmlns="http://xmlns.oracle.com/ide/hash">
+   <value n="id" v="076e1ab4-90ee-4824-8693-beaf4d97e3d5"/>
+   <value n="name" v="SOLFA"/>
+</ProviderSettings>

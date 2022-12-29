@@ -1,0 +1,364 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:tns="http://group.vodafone.com/schema/vbo/payment/customer-money-transfer/v2"
+     xmlns:extvbo="http://group.vodafone.com/schema/extension/vbo/payment/customer-money-transfer/v2"
+     xmlns:cct="urn:un:unece:uncefact:documentation:standard:CoreComponentType:2" xmlns:cmn="http://group.vodafone.com/schema/common/v1"
+     targetNamespace="http://group.vodafone.com/schema/vbo/payment/customer-money-transfer/v2"
+     elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0">
+    <xsd:annotation>
+        <xsd:documentation>Schema definition for CustomerMoneyTransfer.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:import namespace="http://group.vodafone.com/schema/common/v1" schemaLocation="CommonComponents.xsd"/>
+    <xsd:import namespace="http://group.vodafone.com/schema/extension/vbo/payment/customer-money-transfer/v2"
+         schemaLocation="ExtendedCustomerMoneyTransferVBO.xsd"/>
+    <xsd:import namespace="urn:un:unece:uncefact:documentation:standard:CoreComponentType:2" schemaLocation="CoreComponentType_2p0.xsd"/>
+    <xsd:import namespace="http://group.vodafone.com/schema/common/v1" schemaLocation="Meta.xsd"/>
+    <xsd:complexType name="CustomerMoneyTransferVBOType">
+        <xsd:annotation>
+            <xsd:documentation>Customer Money Transfer is an Entity service that provides capabilities to store records of money payments related to customers. It always stores information about single payment only. It represents the transfer of wealth from customer for products or services. It records money transfers for both inbound (charges) and outbound (refunds).</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="cmn:ExtendedBaseComponentType">
+                <xsd:sequence>
+                    <xsd:element name="Details" type="tns:CustomerMoneyTransferDetailsType" minOccurs="0"/>
+                    <xsd:element name="RelatedMoneyTransfers" minOccurs="0">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="MoneyTransfer" type="tns:RelatedMoneyTransferType"
+                                     maxOccurs="unbounded"/>
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="Roles" type="tns:CustomerMoneyTransferRolesType" minOccurs="0"/>
+                    <xsd:element name="Parts" type="tns:CustomerMoneyTransferPartsType" minOccurs="0"/>
+                    <xsd:element name="Extension" type="extvbo:ExtendedCustomerMoneyTransferVBOType"
+                         minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="CustomerMoneyTransferDetailsType">
+        <xsd:annotation>
+            <xsd:documentation>A type definition for CustomerMoneyTransfer Details</xsd:documentation>
+        </xsd:annotation>
+        <xsd:sequence>
+            <xsd:element name="ProcessingDateTime" type="cct:DateTimeType" minOccurs="0"/>
+            <xsd:element name="RefundReason" type="cct:TextType" minOccurs="0"/>
+            <xsd:element name="ConfirmationNumber" type="cct:TextType" minOccurs="0"/>
+            <xsd:element name="DeclarationRequiredIndicator" type="cct:IndicatorType" minOccurs="0"/>
+            <xsd:element name="OrderId" type="cct:IDType" minOccurs="0"/>
+            <xsd:element name="Extension" type="extvbo:ExtendedCustomerMoneyTransferDetailsType" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="RelatedMoneyTransferType">
+        <xsd:annotation>
+            <xsd:documentation>A type definition for Related CustomerMoneyTransfer Type</xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="cmn:BaseComponentType">
+                <xsd:sequence>
+                    <xsd:element name="Extension" type="extvbo:ExtendedRelatedCustomerMoneyTransferType"
+                         minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="CustomerMoneyTransferPartsType">
+        <xsd:sequence>
+            <xsd:element name="CustomerBalanceAccounts" minOccurs="0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="CustomerBalanceAccount" type="tns:CustomerBalanceAccountsType"
+                             maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="CustomerAccounts" minOccurs="0">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="CustomerAccount" type="tns:CustomerAccountType" maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="CustomerInvoice" type="tns:CustomerInvoiceType" minOccurs="0" maxOccurs="unbounded"/>
+            <xsd:element name="PaymentPlan" type="tns:PaymentPlanType" minOccurs="0"/>
+            <xsd:element name="PayerCurrency" type="tns:PayerCurrencyType" minOccurs="0"/>
+            <xsd:element name="ReceiverCurrency" type="tns:ReceiverCurrencyType" minOccurs="0"/>
+            <xsd:sequence>
+                <xsd:element name="PaymentMethod" type="tns:PaymentMethodType" maxOccurs="unbounded" minOccurs="0"/>
+            </xsd:sequence>
+            <xsd:element name="PayerLocation" type="tns:PayerLocationType" minOccurs="0"/>
+            <xsd:element name="Channel" type="tns:ChannelType" minOccurs="0"/>
+            <xsd:element name="Attachments" type="tns:AttachmentsType" minOccurs="0"/>
+            <xsd:element name="Request" type="tns:RequestType" minOccurs="0"/>
+            <xsd:element name="Specification" type="cmn:SpecificationType" minOccurs="0"/>
+            <xsd:element name="LineItems" type="tns:LineItemsType" minOccurs="0"/>
+            <xsd:element name="Extension" type="extvbo:ExtendedCustomerMoneyTransferPartsType" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CustomerMoneyTransferRolesType">
+        <xsd:sequence>
+            <xsd:element name="Payer" type="tns:PayerType" minOccurs="0"/>
+            <xsd:element name="Receiver" type="tns:ReceiverType" minOccurs="0"/>
+            <xsd:element name="User" type="tns:UserType" minOccurs="0"/>
+            <xsd:element name="Approver" type="tns:ApproverType" minOccurs="0"/>
+            <xsd:element name="Authoriser" type="tns:AuthoriserType" minOccurs="0"/>
+            <xsd:element name="WorkforceAgent" type="tns:WorkforceAgentType" minOccurs="0"/>
+            <xsd:element name="Customer" type="tns:WorkforceAgentType" minOccurs="0"/>
+            <xsd:element name="Extension" type="extvbo:ExtendedCustomerMoneyTransferRolesType" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PayerType">
+        <xsd:complexContent>
+            <xsd:extension base="cmn:BaseComponentType">
+                <xsd:sequence>
+                    <xsd:element name="Extension" type="extvbo:ExtendedPayerType" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="ReceiverType">
+        <xsd:complexContent>
+            <xsd:extension base="cmn:BaseComponentType">
+                <xsd:sequence>
+                    <xsd:element name="Extension" type="extvbo:ExtendedReceiverType" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="UserType">
+        <xsd:complexContent>
+            <xsd:extension base="cmn:BaseComponentType">
+                <xsd:sequence>
+                    <xsd:element name="Extension" type="extvbo:ExtendedUserType" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="ApproverType">
+        <xsd:complexContent>
+            <xsd:extension base="cmn:BaseComponentType">
+                <xsd:sequence>
+                    <xsd:element name="Extension" type="extvbo:ExtendedApproverType" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="AuthoriserType">
+        <xsd:complexContent>
+            <xsd:extension base="cmn:BaseComponentType">
+                <xsd:sequence>
+                    <xsd:element name="Extension" type="extvbo:ExtendedAuthoriserType" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="WorkforceAgentType">
+        <xsd:complexContent>
+            <xsd:extension base="cmn:BaseComponentType">
+                <xsd:sequence>
+                    <xsd:element name="Extension" type="extvbo:ExtendedWorkforceAgentType" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="CustomerBalanceAccountsType">
+        <xsd:complexContent>
+            <xsd:extension base="cmn:BaseComponentType">
+                <xsd:sequence>
+                    <xsd:element name="Extension" type="extvbo:ExtendedCustomerBalanceAccountsType" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="CustomerAccountType">
+        <xsd:complexContent>
+            <xsd:extension base="cmn:BaseComponentType">
+                <xsd:sequence>
+                    <xsd:element name="Extension" type="extvbo:ExtendedCustomerAccountType" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="LineItemsType">
+        <xsd:sequence>
+            <xsd:element name="LineItem" type="tns:LineItemType" maxOccurs="unbounded"/>
+            <xsd:element name="Extension" type="extvbo:ExtendedLineItemsType" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="LineItemType">
+        <xsd:complexContent>
+            <xsd:extension base="cmn:BaseComponentType">
+                <xsd:sequence>
+                    <xsd:element name="Price" type="tns:PriceType" minOccurs="0"/>
+                    <xsd:element name="Extension" type="extvbo:ExtendedLineItemType" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="PriceType">
+        <xsd:complexContent>
+            <xsd:extension base="cmn:BaseComponentType">
+                <xsd:sequence>
+                    <xsd:element name="Amount" type="cct:AmountType" minOccurs="0"/>
+                    <xsd:element name="DiscountAmount" type="cct:AmountType" minOccurs="0"/>
+                    <xsd:element name="DiscountPercent" type="cct:PercentType" minOccurs="0"/>
+                    <xsd:element name="Activation" type="tns:ActivationType" minOccurs="0"/>
+                    <xsd:element name="Installation" type="tns:InstallationType" minOccurs="0"/>
+                    <xsd:element name="NetAmount" type="cct:AmountType" minOccurs="0"/>
+                    <xsd:element name="TaxAmount" type="cct:AmountType" minOccurs="0"/>
+                    <xsd:element name="Taxes" type="tns:TaxesType" minOccurs="0"/>
+                    <xsd:element name="ValidityPeriod" type="cmn:ValidityPeriodType" minOccurs="0"/>
+                    <xsd:element name="Extension" type="extvbo:ExtendedPriceType" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="TaxesType">
+        <xsd:sequence>
+            <xsd:element name="Tax" type="tns:TaxType" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="TaxType">
+        <xsd:sequence>
+            <xsd:element name="OriginalAmount" type="cct:AmountType" minOccurs="0"/>
+            <xsd:element name="Authority" type="cct:TextType" minOccurs="0"/>
+            <xsd:element name="ExemptType" type="cct:TextType" minOccurs="0"/>
+            <xsd:element name="Rate" type="cct:PercentType" minOccurs="0"/>
+            <xsd:element name="TaxCode" type="cct:TextType" minOccurs="0"/>
+            <xsd:element name="TaxType" type="cct:TextType" minOccurs="0"/>
+            <xsd:element name="TaxableAmount" type="cct:AmountType" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="ActivationType">
+        <xsd:sequence>
+            <xsd:element name="Amount" type="cct:AmountType" minOccurs="0"/>
+            <xsd:element name="DiscountAmount" type="cct:AmountType" minOccurs="0"/>
+            <xsd:element name="DiscountPercent" type="cct:PercentType" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="InstallationType">
+        <xsd:sequence>
+            <xsd:element name="Amount" type="cct:AmountType" minOccurs="0"/>
+            <xsd:element name="DiscountAmount" type="cct:AmountType" minOccurs="0"/>
+            <xsd:element name="DiscountPercent" type="cct:PercentType" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CustomerInvoiceType">
+        <xsd:complexContent>
+            <xsd:extension base="cmn:BaseComponentType">
+                <xsd:sequence>
+                    <xsd:element name="DueDate" type="cct:DateTimeType" minOccurs="0"/>
+                    <xsd:element name="Period" type="cct:TextType" minOccurs="0"/>
+                    <xsd:element name="Amount" type="cct:AmountType" minOccurs="0"/>
+                    <xsd:element name="IssueDate" type="cct:DateTimeType" minOccurs="0"/>
+                    <xsd:element name="Extension" type="extvbo:ExtendedCustomerInvoiceType" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="PaymentPlanType">
+        <xsd:complexContent>
+            <xsd:extension base="cmn:BaseComponentType">
+                <xsd:sequence>
+                    <xsd:element name="Extension" type="extvbo:ExtendedPaymentPlanType" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="PayerCurrencyType">
+        <xsd:complexContent>
+            <xsd:extension base="cmn:BaseComponentType">
+                <xsd:sequence>
+                    <xsd:element name="Extension" type="extvbo:ExtendedPayerCurrencyType" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="ReceiverCurrencyType">
+        <xsd:complexContent>
+            <xsd:extension base="cmn:BaseComponentType">
+                <xsd:sequence>
+                    <xsd:element name="Extension" type="extvbo:ExtendedReceiverCurrencyType" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="PaymentMethodType">
+        <xsd:complexContent>
+            <xsd:extension base="cmn:BaseComponentType">
+                <xsd:sequence>
+                    <xsd:element name="CardPayment" type="tns:CardPaymentType" minOccurs="0"/>
+                    <xsd:element name="Amount" type="cct:AmountType" minOccurs="0"/>
+                    <xsd:element name="Channel" type="tns:ChannelType" minOccurs="0"/>
+                    <xsd:element name="ValidityPeriod" type="cmn:ValidityPeriodType" minOccurs="0"/>
+                    <xsd:element name="Extension" type="extvbo:ExtendedPaymentMethodType" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="ChannelType">
+        <xsd:complexContent>
+            <xsd:extension base="cmn:BaseComponentType">
+                <xsd:sequence>
+                    <xsd:element name="Extension" type="extvbo:ExtendedChannelType" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="PayerLocationType">
+        <xsd:complexContent>
+            <xsd:extension base="cmn:BaseComponentType">
+                <xsd:sequence>
+                    <xsd:element name="Extension" type="extvbo:ExtendedPayerLocationType" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="AttachmentsType">
+        <xsd:sequence>
+            <xsd:element name="Attachment" type="tns:MoneyTransferAttachmentType" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="MoneyTransferAttachmentType">
+        <xsd:complexContent>
+            <xsd:extension base="cmn:AttachmentType">
+                <xsd:sequence>
+                    <xsd:element name="Extension" type="extvbo:ExtendedMoneyTransferAttachmentType" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="RequestType">
+        <xsd:sequence>
+            <xsd:element name="Amount" type="cct:AmountType" minOccurs="0"/>
+            <xsd:element name="ConvertedAmount" type="cct:AmountType" minOccurs="0"/>
+            <xsd:element name="PostDateTime" type="cct:DateTimeType" minOccurs="0"/>
+            <xsd:element name="Currency" type="tns:CurrencyType" minOccurs="0"/>
+            <xsd:element name="TaxAmount" type="cct:AmountType" minOccurs="0"/>
+            <xsd:element name="Extension" type="extvbo:ExtendedRequestType" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CurrencyType">
+        <xsd:sequence>
+            <xsd:element name="Code" type="cct:CodeType" minOccurs="0"/>
+            <xsd:element name="ExchangeRate" type="cct:NumericType" minOccurs="0"/>
+            <xsd:element name="Extension" type="extvbo:ExtendedCurrencyType" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="CardPaymentType">
+        <xsd:sequence>
+            <xsd:element name="CardNumber" type="cct:NumericType" minOccurs="0"/>
+            <xsd:element name="CardType" type="cct:TextType" minOccurs="0"/>
+            <xsd:element name="ValidityPeriod" type="cmn:ValidityPeriodType" minOccurs="0"/>
+            <xsd:element name="Extension" type="extvbo:ExtendedCardPaymentType" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>
+<!--(c) Vodafone Group Services Limited. All rights reserved.
+This document comprises proprietary and confidential information and copyright material belonging to Vodafone Group Services Limited.
+Other than as permitted by law, no part of this document may be reproduced, adapted, or distributed, in any form or by any means, without
+the prior written consent of Vodafone Group Services Limited.
+The information in this document is subject to change without notice.
+All trademarks acknowledged.
+Vodafone Group Services Limited - Confidential-->
